@@ -1,0 +1,21 @@
+scooty_name="priya"
+actual_price = 1642780
+down_payment = 150000
+interest_rate = 8.0
+loan_years = 3
+loan_amount = actual_price - down_payment
+
+# Calculate EMI components
+R = interest_rate / (12 * 100)  # Monthly interest rate
+N =loan_years * 12             # Loan period in months
+
+# EMI formula
+EMI = loan_amount * R * (1 + R) ** N / ((1 + R) ** N - 1)
+total_payable = EMI * N
+
+# Output
+print(f"scooty Name: {scooty_name}")
+print("actual_price: ₹", round(actual_price,3))
+print("Loan Amount: ₹", round(loan_amount,3))
+print("Monthly EMI: ₹", round(EMI,3))
+print("Total Payable Amount: ₹", round(total_payable))
